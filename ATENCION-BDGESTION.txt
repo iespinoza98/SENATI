@@ -1,0 +1,32 @@
+create database DBGestion; 
+use DBGestion;
+
+create table objetivos(
+id_objetivo int not null primary key auto_increment,
+nom_objetivo varchar(150) not null,
+estado int(1) UNSIGNED DEFAULT 1
+);
+
+create table responsable(
+id_responsable int not null primary key auto_increment,
+nom_responsable varchar(150) not null,
+estado int(1) UNSIGNED DEFAULT 1
+);
+
+create table prioridad(
+id_prioridad int not null primary key auto_increment,
+nom_prioridad varchar(150) not null,
+estado int(1) UNSIGNED DEFAULT 1
+);
+
+create table gestion(
+id_gestion int not null primary key auto_increment,
+id_objetivo int not null,
+id_responsable int not null,
+id_prioridad int not null,
+desc_accion varchar(750) not null,
+fecha_inicio date not null,
+fecha_final date not null,
+notas varchar(750) 
+);
+
